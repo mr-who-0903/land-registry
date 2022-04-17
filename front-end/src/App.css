@@ -1,0 +1,49 @@
+.mainDiv{
+    padding: 0 4rem;
+}
+
+.emblem{
+    width: 5rem;
+    padding-right: 2rem;
+}
+
+.landingPage-heading-div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.landingPage-btn{
+    padding: 1rem 6rem;
+    margin-top: 4rem;
+    font-size: 1rem;
+    border-radius: 10px;
+    outline: none !important;
+    border: none !important;
+    background-color: rgb(28, 199, 28);
+    color: white;
+    cursor: pointer;
+}
+
+.welcome-p{
+    margin-top: 5rem;
+    font-size: 2.4rem;
+    width: 50%;
+}
+
+/* small devices */
+@media screen and (max-width: 400px){
+    
+    .landingPage-mainDiv{
+        padding: 0 2rem;
+    }
+
+    .welcome-p{
+        width: 100%;
+    }
+
+    html{
+        font-size: 75%;
+    }
+}

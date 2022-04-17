@@ -1,0 +1,51 @@
+.explore-maindiv{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.explore-maindiv .form-control{
+    width: 90%;
+}
+
+.explore-result{
+    margin-top: 4rem;
+    width: 100%;
+    border: 2px solid rgb(160, 158, 158);
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.buy-btn, .no-sale, .req-pending, .marked-sale, .mark-available-btn, .marked-available{
+    width: 100%;
+    border: none;
+    outline: none !important;
+    padding: 0.5rem;
+    color: white;
+    border-radius: 5px;
+}
+
+.marked-sale{
+    background-color: rgb(28, 199, 28);
+}
+
+.buy-btn, .mark-available-btn{
+    background-color: rgb(28, 199, 28);
+    cursor: pointer;
+    outline: none;
+}
+
+.req-pending, .marked-available{
+    background-color: rgb(158, 235, 158) ;
+}
+
+.no-sale{
+    background-color: red;
+}
+
+.no-result-div{
+    margin-top: 4rem;
+}
+
+.no-result{
+    font-size: 2rem;
+}

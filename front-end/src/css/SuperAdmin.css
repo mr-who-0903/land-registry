@@ -1,0 +1,52 @@
+.superAdmin-heading-div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.superAdmin-p{
+    font-size: 1.5rem;
+    margin-top: 2rem;
+}
+
+.admin-form{
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.6rem;
+}
+
+.form-control{
+    width: 50%;
+    padding: 0.6rem;
+    outline: none;
+    margin: none;
+}
+
+.admin-form-btn{
+    padding: 0.8rem 4rem;
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    outline: none !important;
+    border: none !important;
+    background-color: rgb(30, 152, 223);
+    color: white;
+    cursor: pointer;
+}
+
+.superAdmin-mainDiv{
+    margin-bottom: 4rem;
+}
+
+/* small devices */
+@media screen and (max-width: 400px){
+    .form-control{
+        width: 90%;
+    }
+}

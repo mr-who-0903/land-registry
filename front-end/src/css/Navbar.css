@@ -1,0 +1,13 @@
+.navbar{
+    padding: 1rem 4rem;
+}
+
+.nav-item{
+    margin-left: 2rem;
+}
+
+@media screen and (max-width: 400px){
+    .navbar{
+        padding: 0.5rem 1rem;
+    }
+}
