@@ -1,7 +1,6 @@
 import React from 'react'
 
 const DisplayExploreResult = (props) => {
-  console.log(props.available)
   return (
     <>
     {

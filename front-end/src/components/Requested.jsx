@@ -1,4 +1,5 @@
 import React, {useState, useEffect } from 'react'
+import DisplayRequested from './DisplayRequested';
 
 const Requested = (props) => {
 
@@ -43,7 +44,31 @@ const Requested = (props) => {
 
   return (
     <div className='container'>
+        {  
+        (length === 0) ? 
+        <div className="no-result-div">
+          <p className='no-result'>No pending requests.</p>
+        </div>
+        :
+          requestedList.map((details, index) =>{
+            return(
+              <DisplayRequested
+                 
+                key = {index}
+                owner = {details[0]}
+                propertyId = {details[1].words[0]}
+                index = {details[2].words[0]}
+                marketValue = {details[3].words[0]}
+                sqft = {details[4].words[0]}
+                state = {details.state}
+                district = {details.district}
+                city = {details.city}
+                surveyNo = {details.surveyNo}
 
+              />
+            )
+          })
+        } 
     </div>
   )
 }
