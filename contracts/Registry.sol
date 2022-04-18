@@ -237,6 +237,17 @@ contract Registry{
         return(owner, propertyid, indx, mv, sqft);
     }
 
+    function getRequestCnt_propId(string memory _state, string memory _district, string memory _city, uint _surveyNo) external view returns(uint, uint256){
+        uint _noOfRequests = landDetalsMap[_state][_district][_city][_surveyNo].noOfRequests;
+        uint256 _propertyId = landDetalsMap[_state][_district][_city][_surveyNo].propertyId;
+        return(_noOfRequests, _propertyId);
+    }
+
+    function getRequesterDetail(string memory _state, string memory _district, string memory _city, uint _surveyNo, uint _reqIndex) external view returns(address){
+        address requester = landDetalsMap[_state][_district][_city][_surveyNo].requests[_reqIndex].whoRequested;
+        return(requester);
+    }
+
     function isAvailable(string memory _state, string memory _district, string memory _city, uint _surveyNo) external view returns(bool){
         bool available = landDetalsMap[_state][_district][_city][_surveyNo].markAvailable;
         return(available);
