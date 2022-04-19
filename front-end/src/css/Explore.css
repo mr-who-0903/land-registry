@@ -15,7 +15,11 @@
     border-radius: 5px;
 }
 
-.buy-btn, .no-sale, .req-pending, .marked-sale, .mark-available-btn, .marked-available{
+.explore-result p{
+    margin-bottom: 0.8rem;
+}
+
+.buy-btn, .no-sale, .req-pending, .marked-sale, .mark-available-btn, .marked-available, .accept-req{
     width: 100%;
     border: none;
     outline: none !important;
@@ -28,7 +32,7 @@
     background-color: rgb(28, 199, 28);
 }
 
-.buy-btn, .mark-available-btn{
+.buy-btn, .mark-available-btn, .accept-req{
     background-color: rgb(28, 199, 28);
     cursor: pointer;
     outline: none;

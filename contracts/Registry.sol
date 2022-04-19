@@ -191,8 +191,12 @@ contract Registry{
         uint newOwner_reqIndex = landDetalsMap[_state][_district][_city][_surveyNo].requests[_reqNo].reqIndex;
         uint noOfReq = landDetalsMap[_state][_district][_city][_surveyNo].noOfRequests;
 
-        // now removing all incoming requests
+        // deleting requested land from all requesters AND removing all incoming requests
         for(uint i=0; i<noOfReq; i++){
+            address requesterAddr = landDetalsMap[_state][_district][_city][_surveyNo].requests[i].whoRequested;
+            uint requester_reqIndx = landDetalsMap[_state][_district][_city][_surveyNo].requests[i].reqIndex;
+            
+            delete requestedLands[requesterAddr][requester_reqIndx];
             delete landDetalsMap[_state][_district][_city][_surveyNo].requests[i];
         }
 
@@ -203,7 +207,7 @@ contract Registry{
         // deleting property from user_1's ownerMapsProperty 
         delete ownerMapsProperty[msg.sender][_index];
 
-        // adding ownerMapsProperty for user_2
+        // adding ownerMapsProperty for newOwner
         uint newOwnerTotProp = userProfile[newOwner].totalIndices;
         OwnerOwns storage newOwnerOwns = ownerMapsProperty[newOwner][newOwnerTotProp];
        
@@ -215,9 +219,6 @@ contract Registry{
         landDetalsMap[_state][_district][_city][_surveyNo].index = newOwnerTotProp;
 
         userProfile[newOwner].totalIndices++;
-
-        // deleting requested land from user_2
-        delete requestedLands[newOwner][newOwner_reqIndex];
 
     }
 

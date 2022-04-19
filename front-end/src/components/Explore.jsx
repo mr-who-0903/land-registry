@@ -18,6 +18,7 @@ const Explore = (props) => {
   const [didIRequested, setDidIRequested] = useState(false);
   const [available, setAvailable] = useState(false);
   const [noResult, setNoResult] = useState(0);
+  const [isOwner, setIsOwner] = useState(false);
 
   const onChangeFunc = (event) =>{
     const {name, value} = event.target;
@@ -33,21 +34,28 @@ const Explore = (props) => {
       from: account
     })
 
-    if(isAvaliable){
-      const _didIRequested = await contract.didIRequested(explore.state, explore.district, explore.city, explore.surveyNo,{
-        from: account
-      })
-
-      setDidIRequested(_didIRequested);
-    }
-
     const owner = landDetails[0];
     const propertyId = landDetails[1].words[0]
     const index = landDetails[2].words[0]
     const marketValue = landDetails[3].words[0]
     const sqft = landDetails[4].words[0]
+    const surveyNo = explore.surveyNo
 
-    setLandDetail({owner, propertyId, index, marketValue, sqft})
+    if(account === owner){
+      setIsOwner(true)
+    }
+    else{
+      setIsOwner(false);
+      if(isAvaliable){
+        const _didIRequested = await contract.didIRequested(explore.state, explore.district, explore.city, explore.surveyNo,{
+          from: account
+        })
+        
+        setDidIRequested(_didIRequested);
+      }
+    }
+
+    setLandDetail({owner, propertyId, index, marketValue, sqft, surveyNo})
     setAvailable(isAvaliable);
     setNoResult(1);
   }
@@ -104,7 +112,7 @@ const Explore = (props) => {
 
             owner = {landDetail.owner}
             propertyId = {landDetail.propertyId}
-            surveyNo = {explore.surveyNo}
+            surveyNo = {landDetail.surveyNo}
             marketValue = {landDetail.marketValue}
             sqft = {landDetail.sqft}
             available = {available}
@@ -112,6 +120,7 @@ const Explore = (props) => {
             didIRequested = {didIRequested}
             requestForBuy = {requestForBuy}
             noResult = {noResult}
+            isOwner = {isOwner}
 
         />
         

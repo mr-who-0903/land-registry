@@ -13,7 +13,7 @@ const DisplayExploreResult = (props) => {
             <p><b>Size:</b> {props.sqft} sq. ft.</p>
 
             {(props.available) ? 
-              ((props.isAdmin) ?
+              ((props.isAdmin || props.isOwner) ?
                 <button className='marked-sale'><b>Marked for sale</b></button>
                 :
                 ((props.didIRequested) ? 

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import DisplayRequests from './DisplayRequests';
 
 const Requests = (props) => {
 
@@ -8,7 +9,7 @@ const Requests = (props) => {
   const [requestList, setRequestList] = useState([])
   const [length, setLength] = useState(0);
   const [reload, setReload] = useState(0);
-  const detailsArr = [];
+  const reqArr = [];
 
   useEffect(() => {
     const getRequests = async () =>{
@@ -39,24 +40,55 @@ const Requests = (props) => {
               })
 
               const reqDetails = {state: ownerOwns[0], district: ownerOwns[1], city: ownerOwns[2], surveyNo: ownerOwns[3].words[0], index: i, reqNo: j, requester, propertyId}
-              detailsArr.push(reqDetails);
+              reqArr.push(reqDetails);
 
             }
           }
         }
       }
 
-      setRequestList(detailsArr);
-      setLength(detailsArr.length);
-      console.log(detailsArr);
+      setRequestList(reqArr);
+      setLength(reqArr.length);
+      console.log(reqArr);
     }
 
     getRequests();
 
-  }, [])
+  }, [reload])
+
+  const handleAcceptReq = async (_index, _reqNo) => {
+      await contract.AcceptRequest(_index, _reqNo, {from: account});
+      setReload(!reload);
+  }
 
   return (
-    <div>Requests</div>
+    <div className='container'>
+      {  
+        (length == 0) ? 
+        <div className="no-result-div">
+          <p className='no-result'>No incoming requests.</p>
+        </div>
+        :
+          requestList.map((details, index) =>{
+            return(
+              <DisplayRequests
+                 
+                key = {index}
+                propertyId = {details.propertyId}
+                requester = {details.requester}
+                index = {details.index}
+                reqNo = {details.reqNo}
+                state = {details.state}
+                district = {details.district}
+                city = {details.city}
+                surveyNo = {details.surveyNo}
+                acceptReq = {handleAcceptReq}
+    
+              />
+            )
+          })
+        } 
+    </div>
   )
 }
 

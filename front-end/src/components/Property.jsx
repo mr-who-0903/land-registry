@@ -55,7 +55,7 @@ const Property = (props) => {
 
 
   return (
-    <div className='container'>
+    <div className='container' style={{marginBottom: '2rem'}}>
         {  
         (length == 0) ? 
         <div className="no-result-div">
