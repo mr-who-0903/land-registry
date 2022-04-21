@@ -1,7 +1,3 @@
-.mainDiv{
-    padding: 0 4rem;
-}
-
 .emblem{
     width: 5rem;
     padding-right: 2rem;
@@ -14,7 +10,7 @@
     margin-top: 2rem;
 }
 
-.landingPage-btn{
+.landingPage-btn, .update-btn{
     padding: 1rem 6rem;
     margin-top: 4rem;
     font-size: 1rem;
@@ -41,10 +37,15 @@
     }
 
     .welcome-p{
-        width: 100%;
+        width: 86%;
+    }
+
+    .landingPage-btn{
+        font-size: 1.5rem;
+        padding: 1rem 3rem;
     }
 
     html{
-        font-size: 75%;
+        font-size: 80%;
     }
 }

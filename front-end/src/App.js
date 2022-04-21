@@ -85,7 +85,7 @@ useEffect(() =>{
       <Route path='/' element= 
       {
       <div className="App">
-          <div className='mainDiv'>
+          <div className='container mainDiv'>
                 <div className='landingPage-heading-div'>
                     <img src={emblem} alt="emblem" className="emblem" />
                     <h1>Decentralized Land Registration</h1>
