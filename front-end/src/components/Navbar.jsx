@@ -11,28 +11,28 @@ const Navbar = (props) => {
         (props.isAdmin) ? 
           <>
             <li className="nav-item active">
-                <NavLink className="nav-link" to="/admin/">Register Land<span className="sr-only">(current)</span></NavLink>
+                <NavLink className="nav-link" exact activeClassName="active" to="/admin/">Register Land<span className="sr-only">(current)</span></NavLink>
             </li>
             <li className="nav-item">
-                <NavLink className="nav-link" to="/admin/explore">Explore</NavLink>
+                <NavLink className="nav-link" exact activeClassName="active" to="/admin/explore">Explore</NavLink>
             </li>
           </>
           :
           <>
             <li className="nav-item active">
-                <NavLink className="nav-link" to="/userprofile/">Profile<span className="sr-only">(current)</span></NavLink>
+                <NavLink className="nav-link" exact activeClassName="active" to="/userprofile/">Profile<span className="sr-only">(current)</span></NavLink>
             </li>
             <li className="nav-item">
-                <NavLink className="nav-link" to="/userprofile/property">Property<span className="sr-only">(current)</span></NavLink>
+                <NavLink className="nav-link" exact activeClassName="active" to="/userprofile/property">Property<span className="sr-only">(current)</span></NavLink>
             </li>
             <li className="nav-item">
-                <NavLink className="nav-link" to="/userprofile/requests">Requests<span className="sr-only">(current)</span></NavLink>
+                <NavLink className="nav-link" exact activeClassName="active" to="/userprofile/requests">Requests<span className="sr-only">(current)</span></NavLink>
             </li>
             <li className="nav-item">
-                <NavLink className="nav-link" to="/userprofile/requested">Requested<span className="sr-only">(current)</span></NavLink>
+                <NavLink className="nav-link" exact activeClassName="active" to="/userprofile/requested">Requested<span className="sr-only">(current)</span></NavLink>
             </li>
             <li className="nav-item">
-                <NavLink className="nav-link" to="/userprofile/explore">Explore</NavLink>
+                <NavLink className="nav-link" exact activeClassName="active" to="/userprofile/explore">Explore</NavLink>
             </li>
           </>
       )

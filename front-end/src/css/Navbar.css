@@ -6,6 +6,10 @@
     margin-left: 2rem;
 }
 
+.active{
+    font-weight: 500;
+}
+
 @media screen and (max-width: 400px){
     .navbar{
         padding: 0.5rem 1rem;
