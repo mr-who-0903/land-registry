@@ -1,38 +1,40 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { NavLink } from 'react-router-dom'
 import emblem from '../images/emblem.svg'
 import '../css/Navbar.css'
 
 const Navbar = (props) => {
 
+  const [isActive, setActive] = useState(true);
+
   const RenderMenu = () =>{
 
       return(
         (props.isAdmin) ? 
           <>
-            <li className="nav-item active">
+            <li className={(isActive) ? "active nav-item": "nav-item"}>
                 <NavLink className="nav-link" exact activeClassName="active" to="/admin/">Register Land<span className="sr-only">(current)</span></NavLink>
             </li>
             <li className="nav-item">
-                <NavLink className="nav-link" exact activeClassName="active" to="/admin/explore">Explore</NavLink>
+                <NavLink className="nav-link" exact activeClassName="active" to="/admin/explore" onClick={() => setActive(false)}>Explore</NavLink>
             </li>
           </>
           :
           <>
-            <li className="nav-item active">
-                <NavLink className="nav-link" exact activeClassName="active" to="/userprofile/">Profile<span className="sr-only">(current)</span></NavLink>
+            <li className={(isActive) ? "active nav-item": "nav-item"}>
+                <NavLink className="nav-link" exact activeClassName="active" to="/userprofile/" onClick={() => setActive(false)}>Profile<span className="sr-only">(current)</span></NavLink>
             </li>
             <li className="nav-item">
-                <NavLink className="nav-link" exact activeClassName="active" to="/userprofile/property">Property<span className="sr-only">(current)</span></NavLink>
+                <NavLink className="nav-link" exact activeClassName="active" to="/userprofile/property" onClick={() => setActive(false)}>Property</NavLink>
             </li>
             <li className="nav-item">
-                <NavLink className="nav-link" exact activeClassName="active" to="/userprofile/requests">Requests<span className="sr-only">(current)</span></NavLink>
+                <NavLink className="nav-link" exact activeClassName="active" to="/userprofile/requests" onClick={() => setActive(false)}>Requests</NavLink>
             </li>
             <li className="nav-item">
-                <NavLink className="nav-link" exact activeClassName="active" to="/userprofile/requested">Requested<span className="sr-only">(current)</span></NavLink>
+                <NavLink className="nav-link" exact activeClassName="active" to="/userprofile/requested" onClick={() => setActive(false)}>Requested</NavLink>
             </li>
             <li className="nav-item">
-                <NavLink className="nav-link" exact activeClassName="active" to="/userprofile/explore">Explore</NavLink>
+                <NavLink className="nav-link" exact activeClassName="active" to="/userprofile/explore" onClick={() => setActive(false)}>Explore</NavLink>
             </li>
           </>
       )
