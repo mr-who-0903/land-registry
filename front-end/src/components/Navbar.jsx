@@ -22,7 +22,7 @@ const Navbar = (props) => {
           :
           <>
             <li className={(isActive) ? "active nav-item": "nav-item"}>
-                <NavLink className="nav-link" exact activeClassName="active" to="/userprofile/" onClick={() => setActive(false)}>Profile<span className="sr-only">(current)</span></NavLink>
+                <NavLink className="nav-link" exact activeClassName="active" to="/userprofile/">Profile<span className="sr-only">(current)</span></NavLink>
             </li>
             <li className="nav-item">
                 <NavLink className="nav-link" exact activeClassName="active" to="/userprofile/property" onClick={() => setActive(false)}>Property</NavLink>
