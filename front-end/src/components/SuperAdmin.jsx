@@ -28,7 +28,7 @@ const SuperAdmin = (props) => {
 
 
   return (
-    <div className='mainDiv superAdmin-mainDiv'>
+    <div className='container superAdmin-mainDiv'>
       <div className='superAdmin-heading-div'>
           <NavLink to='/'>
           <img src={emblem} alt="emblem" className="emblem" />
