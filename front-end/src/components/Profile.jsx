@@ -69,7 +69,7 @@ const Profile = (props) => {
                       <option selected value="NA" >NA</option>
                       <option value="Male">Male</option>
                       <option value="Female">Female</option>
-                      <option value="I prefer not to say">I prefer not to say</option>
+                      <option value="I prefer not to say">Others</option>
                     </select>
                 </div>
                 <div className='form-group'>
@@ -119,7 +119,7 @@ const Profile = (props) => {
               <label><b>Contact Number</b></label>
               <p>{userInfo.contact}</p>
 
-              <label><b>Resindential Address</b></label>
+              <label><b>Residential Address</b></label>
               <p>{userInfo.residential_addr}</p>
           </div>
         </div>
