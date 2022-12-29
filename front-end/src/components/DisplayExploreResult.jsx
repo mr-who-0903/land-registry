@@ -12,14 +12,18 @@ const DisplayExploreResult = (props) => {
             <p><b>Market Value:</b> {props.marketValue}</p>
             <p><b>Size:</b> {props.sqft} sq. ft.</p>
 
-            {(props.available) ? 
-              ((props.isAdmin || props.isOwner) ?
+            {
+            (props.available) ? 
+              (
+                (props.isAdmin || props.isOwner) ?
                 <button className='marked-sale'><b>Marked for sale</b></button>
                 :
                 ((props.didIRequested) ? 
                   <button className='req-pending'><b>Request Pending</b></button>
                   :
-                  <button className='buy-btn' onClick={props.requestForBuy}><b>Request for buy</b></button>))
+                  <button className='buy-btn' onClick={props.requestForBuy}><b>Request for buy</b></button>
+                )
+              )
               :
               <button className='no-sale'><b>Not for sale</b></button>
             }
