@@ -22,8 +22,13 @@
 //
 // const fs = require('fs');
 // const mnemonic = fs.readFileSync(".secret").toString().trim();
-
+// const path = require('path');
 module.exports = {
+//   resolve: {
+//     fallback: {
+//       url: require.resolve('url/'),
+//     },
+//   },
   
   contracts_build_directory: "./front-end/public/contracts",
 
