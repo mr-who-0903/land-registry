@@ -1,0 +1,27 @@
+{
+  "name": "yes",
+  "version": "1.0.0",
+  "description": "Blockchain based Land Registration and transfer of entitlement system where the land ownership and all its details are stored in the Blockchain with zero chances of forgery in ownership.",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "create-react-app": "^5.0.0",
+    "web3": "^1.7.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mr-who-0903/land-registry.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mr-who-0903/land-registry/issues"
+  },
+  "homepage": "https://github.com/mr-who-0903/land-registry#readme"
+}
